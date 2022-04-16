@@ -1,0 +1,45 @@
+db.users.findOne(
+    {
+        posts: {
+            $elemMatch: {
+                title: 'javascript'
+            }
+        }
+    }
+)
+
+db.users.findOne(
+    {fullname: "petya"},
+    {posts:1}
+)
+
+db.users.update(
+        {fullname: "petya"},
+        {
+            $set: {
+                posts: [
+                    {title:'javascript', text:'js top'},
+                    {title:'mongo', text:'mongo database'},
+                ]
+            }
+        }
+)
+
+db.users.bulkWrite([
+    {
+        insertOne: {
+            document: {name: "nastya", age:18}
+        }
+    },
+    {
+        deleteOne: {
+            filter: {name: 'petya'}
+        }
+    }
+])
+
+
+поиск пользователя с постами
+db.users.find({posts: {$exists: true}})
+
+оптимизация связей
