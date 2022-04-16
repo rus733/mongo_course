@@ -1,6 +1,5 @@
  const {MongoClient} = require("mongodb")
  const client = new MongoClient ('mongodb+srv://as:ikl999@cluster0.ttvdb.mongodb.net/mongo?retryWrites=true&w=majority')
- //mongodb+srv://as:<password>@cluster0.8k7yf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
  //mongodb+srv://as:<password>@cluster0.ttvdb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
  const start = async () =>  {
     try {
